@@ -1,4 +1,5 @@
 from PIL import Image
+from PIL import ImageGrab
 import os
 from pytesseract import image_to_string
 from pdf2image import convert_from_path 
@@ -10,11 +11,7 @@ def newest(path):
 
 latest=newest('C:\\Users\\dell\\Downloads')
 
-popplerpath='.\\poppler-0.67.0\\bin'
-os.environ["PATH"] += os.pathsep + popplerpath
-# print(os.environ)
+im = ImageGrab.grab(bbox=(500, 500, 600, 700))
 
-text=image_to_string(Image.open(latest))
-# with open('chapter10.sql','a') as fp:
-# 	fp.write(text)
-print (text)
+# text=image_to_string(Image.open(latest))
+# print (text)
